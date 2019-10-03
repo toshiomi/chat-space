@@ -35,7 +35,7 @@
     background-color: #2f3e58;
     height: calc(100% - 100px);
     padding:20px 20px 0px;
-      .groups{
+      .group{
         color:$white;
         font-weight: bold;
         .group-name{
@@ -60,10 +60,14 @@
     border-bottom: solid 1px #eee;
     .group-box{
       .current-group{
-
+        color: #33333;
+        font-size: 20px;
+        padding-top: 35px;
       }
       .group-member{
-        
+        color: #999999;
+        font-size: 12px;
+        padding-top: 15px;
       }
     }
   }
