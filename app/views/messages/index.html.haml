@@ -1,0 +1,52 @@
+.main
+  .left-contents
+    .left-top
+      .left-top__box
+        .user-name
+          user
+        .menu
+          .new-group
+            =link_to "new-group", class: "icon" do
+              = fa_icon 'edit'
+          .edit-user
+            =link_to "edit-user", class: "icon" do
+              = fa_icon 'cog'
+
+    .left-bottom
+      .group
+        .group-name
+          ぼっち
+        .last-message
+          頑張れ俺
+
+  .right-contents
+    .right-top
+      .group-box
+        .current-group
+          ぼっち
+        .group-member
+          .group-member-left
+            Member：
+          .group-member-right
+            user
+      .edit-btn
+        =link_to "edit-group" do
+          Edit
+    .right-middle
+      .message-box
+        .info
+          .talker
+            user
+          .date
+            2019/10/03(Thu) 12:34:27
+        .message-text
+          テストテストテスト
+    .right-bottom
+      .input-box
+        .input-text
+          type a message
+        .input-img
+          =link_to "edit-user", class: "img" do
+            = fa_icon 'image'
+      .send-btn
+        Send
