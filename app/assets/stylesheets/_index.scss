@@ -27,6 +27,8 @@
       }
       .menu{
         display: flex;
+        .new-group{}
+        .edit-user{}
       }
     }
   }
@@ -58,6 +60,8 @@
     height: 100px;
     padding: 0px 40px;
     border-bottom: solid 1px #eee;
+    display: flex;
+    justify-content:space-between;
     .group-box{
       .current-group{
         color: #33333;
@@ -68,15 +72,80 @@
         color: #999999;
         font-size: 12px;
         padding-top: 15px;
+        display: flex;
       }
+    }
+    .edit-btn{
+      display:block;
+      color:$blue;
+      height:40px;
+      padding:0px 20px;
+      border: solid 1px $blue;
+      line-height: 40px;
+      margin-top:28px;
+      background-color: white;
+    a{
+      text-decoration: none;
+    }
     }
   }
   .right-middle{
     background-color: #fafafa;
     height: calc(100% - 190px);
+    padding:46px 40px 0px;
+    .info{
+      display: flex;
+      .talker{
+        color:#434a54;
+        font-size:16px;
+        font-weight: bold;
+      }
+      .date{
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    .message-text{
+      color: #434a54;
+      font-size: 14px;
+      padding:10px 0px 40px;
+    }
   }
   .right-bottom{
     background-color: #ddd;
     height: 90px;
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .input-box{
+      background-color: $white;
+      height: 50px;
+      width: 100%;
+      padding: 0px 10px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: space-between;
+      .input-text{
+        color: #434a54;
+        font-size: 16px;
+        line-height: 50px;
+        text-align: left;
+      }
+      .input-img{
+        width: 50px;
+        line-height: 50px;
+        text-align: right;
+      }
+    }
+    .send-btn{
+      background-color: $blue;
+      height: 50px;
+      width: 100px;
+      color: $white;
+      line-height: 50px;
+      text-align: center;
+    }
   }
 }
