@@ -36,13 +36,12 @@ $(document).on('turbolinks:load', function() {
       .done(function(groups_user) {
         $("#user-search-result").empty();
         if (groups_user.length !== 0) {
-          console.log('死ねゴミ');
           groups_user.forEach(function(user) {
             appendUser(user);
           });
         }
         else {
-          console.log('バーカ');
+          
         }
       })
       .fail(function(){
@@ -52,10 +51,9 @@ $(document).on('turbolinks:load', function() {
 
     $(function(){
       $(document).on("click", ".user-search-add", function() {
-        var name = $(this).attr("data-user-name");
-        var user_id = $(this).attr("data-user-id");
+        var name = $(this).data("user-name");
+        var user_id = $(this).data("user-id");
         $(this).parent().remove();
-        console.log('跪け、クソムシが！')
         appendMember(name, user_id);
       });
       $(document).on("click",".user-search-remove", function() {
