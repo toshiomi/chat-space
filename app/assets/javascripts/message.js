@@ -61,6 +61,8 @@ $('#new_message').on('submit', function(e){
           $('.messages').append(insertHTML);
       })
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('.message:last');
+
     }) 
     .fail(function() {
       console.log('バーカ');
