@@ -16,7 +16,7 @@
         .right-header__button
         = link_to edit_group_path(@group.id) do
           Edit
-    .messages
+    .messages{id:@group.id}
       = render @messages
     .form
       = form_for [@group, @message] do |f|
