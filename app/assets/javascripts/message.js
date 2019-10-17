@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){ 
   function buildHTML(message){
-     var new_image = message.image_url ? `<img class= "lower-message__image" src= ${message.image_url} >` : "";
+     var new_image = message.image.url ? `<img class= "lower-message__image" src= ${message.image.url} >` : "";
      var html =
       `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function(){
              ${message.user_name}
            </div>
            <div class="upper-message__date">
-             ${message.date}
+             ${message.created_at}
            </div>
          </div>
          <div class="lower-message">
@@ -16,7 +16,8 @@ $(document).on('turbolinks:load', function(){
              ${message.content}
            </p>
            ${new_image}
-         </div>`
+         </div>
+       </div>`
      return html;
   }
 
