@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .side-bar {
   box-sizing: border-box;
   color: $white;
@@ -27,10 +30,11 @@
 
   .groups {
     background-color: $side_blue_light;
-    height: calc(100vh - 100px);
+    height: calc(100% - 100px);
+    width: 300px;
     padding: 0 20px;
+    overflow: scroll;
     .group {
-      box-sizing: border-box;
       padding: 20px 0 40px;
       &__name {
         color: $white;
