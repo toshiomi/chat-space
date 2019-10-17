@@ -35,7 +35,7 @@ $('#new_message').on('submit', function(e){
   .done(function(data){
     var html = buildHTML(data);
     $('.messages').append(html);
-    $('.messages').animate({scrollTop: $('.messages')[0].scroll}, 'fast');   
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
   })
    .fail(function(){
@@ -45,8 +45,9 @@ $('#new_message').on('submit', function(e){
  })
 
   var reloadMessages = function() {
-    var last_message_id = $('.message:last').data("id");
+    var last_message_id = $('.message:last').data("message-id");
     var group_id = $(".messages").attr("id");
+    console.log(group_id)
     var url = `/groups/${group_id}/api/messages`
     $.ajax({
       url: url,
@@ -55,13 +56,13 @@ $('#new_message').on('submit', function(e){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-
+      console.log(messages)
       var insertHTML = '';
         messages.forEach(function (message){
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     }) 
     .fail(function() {
       alert('エラー');
