@@ -45,9 +45,9 @@ $('#new_message').on('submit', function(e){
  })
 
   var reloadMessages = function() {
-    var last_message_id = $('.message:last').attr("data-id");
+    var last_message_id = $('.message:last').data("id");
     var group_id = $(".messages").attr("id");
-    var url = "/groups/"+ group_id +"/api/messages"
+    var url = `/groups/${group_id}/api/messages`
     $.ajax({
       url: url,
       type: 'get',
@@ -55,17 +55,16 @@ $('#new_message').on('submit', function(e){
       data: {id: last_message_id}
     })
     .done(function(messages) {
+
       var insertHTML = '';
         messages.forEach(function (message){
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
       })
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      $('.message:last');
-
     }) 
     .fail(function() {
-      console.log('バーカ');
+      alert('エラー');
     });
   };
   if (window.location.href.match(/\/groups\/\d+\/messages/)){
