@@ -19,6 +19,14 @@ $(document).on('turbolinks:load', function() {
                 </div>`
     member_list.append(html);
   }
+  
+  function noUser() {
+    var html =`<div class="chat-group-user clearfix">
+                <p class="chat-group-user__name">該当するユーザーがいません</p>
+              </div>`
+
+    user_list.append(html);
+  }
 
   $(function(){
     $("#user-search-field").on("keyup", function() {
@@ -40,10 +48,12 @@ $(document).on('turbolinks:load', function() {
             appendUser(user);
           });
         }
+
         else {
-          
+          noUser()
         }
       })
+
       .fail(function(){
         alert('ユーザー検索に失敗しました');
       });
