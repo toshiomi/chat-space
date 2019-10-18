@@ -2,9 +2,10 @@
   box-sizing: border-box;
 }
 .side-bar {
-  box-sizing: border-box;
   color: $white;
   width: 300px;
+  height:100%;
+  position: relative;
   .header {
     background-color: $side_blue_dark;
     height: 100px;
@@ -33,7 +34,12 @@
     height: calc(100% - 100px);
     width: 300px;
     padding: 0 20px;
+    position: absolute;
+    top: 100px;
     overflow: scroll;
+    a {
+      text-decoration: none;
+    }
     .group {
       padding: 20px 0 40px;
       &__name {

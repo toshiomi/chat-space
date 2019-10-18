@@ -43,9 +43,10 @@ $('#new_message').on('submit', function(e){
      alert('error');
    });
    return false;
- })
+ });
 
-  var reloadMessages = function() {
+  var reloadMessages = function(){
+    if(document.URL.match("messages")){
     var last_message_id = $('.message:last').data("message-id");
     var group_id = $(".messages").attr("id");
     console.log(group_id)
@@ -59,17 +60,16 @@ $('#new_message').on('submit', function(e){
     .done(function(messages) {
       console.log(messages)
       var insertHTML = '';
-        messages.forEach(function (message){
+        messages.forEach(function(message){
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      })
+      });
     }) 
     .fail(function() {
       alert('エラー');
     });
   };
-  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+  };
   setInterval(reloadMessages, 5000);
-  }
 });
